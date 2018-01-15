@@ -23,9 +23,8 @@ function scannerFactory(start: string, end: string): (input: string[]) => number
     // 2. Find "end" character and count sequence
     // 3. Take the min between the two numbers and ensure "start" was previously found
     // Result:
-    // A number array containing the number of sequence characters for the two characters,
+    // A number array containing the number of sequential characters.
     // e.g. if '0' is the starting character, '0011' will return [ 2 ], '0101' will return [ 1, 1 ].
-    // Do this for each starting sequence.
     let result = [];
     let char = array.pop();
     let m = 0, n = 0;
