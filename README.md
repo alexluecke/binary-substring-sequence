@@ -8,5 +8,13 @@ With Typescript > 2.5.3 installed:
 
 ```
 $ npm i
-$ npm test
+$ npm run solve -- --input <input>
+```
+
+Note:
+
+```
+<input> = <input> <code> | <code>
+<code> = <code><code> | <terminal>
+<terminal> = 0 | 1 | ''
 ```

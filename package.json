@@ -6,7 +6,7 @@
   "scripts": {
     "test": "tsc -p tsconfig.spec.json && ./node_modules/jasmine/bin/jasmine.js --config=jasmine.json",
     "build": "tsc",
-    "start": "tsc && node ./build/main.js",
+    "solve": "tsc && node ./build/main.js",
     "clean": "rm -rf build/ && rm -rf test/"
   },
   "author": "",
