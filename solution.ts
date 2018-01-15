@@ -57,7 +57,7 @@ function buildResultOutput(results: number[], start: string, end: string): strin
   // Instead of counting along the way, I build this result after gathering the sequences.
   return results.reduce((acc, seq) => {
     while (seq > 0) {
-      acc.push(String(start).repeat(seq) + String(end).repeat(seq));
+      acc.push(start.repeat(seq) + end.repeat(seq));
       seq--;
     }
     return acc;
