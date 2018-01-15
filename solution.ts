@@ -54,7 +54,7 @@ function scannerFactory(start: string, end: string): (input: string[]) => number
 function buildResultOutput(results: number[], start: string, end: string): string[] {
   // Observation:
   // Every k sequence of a char, there will be k - 1 substrings.
-  // Instead of counting along the way, I build this result after gathering the substrings.
+  // Instead of counting along the way, I build this result after gathering the sequences.
   return results.reduce((acc, seq) => {
     while (seq > 0) {
       acc.push(String(start).repeat(seq) + String(end).repeat(seq));
