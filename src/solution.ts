@@ -1,4 +1,4 @@
-function solution(input: string): string[] {
+export function solution(input: string): string[] {
   const array = input.split('');
 
   // Read back to front with `pop` -> reverse array
@@ -58,9 +58,3 @@ function buildResultOutput(results: number[], start: string, end: string): strin
     return acc;
   }, [] as string[]);
 }
-
-console.log(solution('010101')); // [ '01', '01', '01', '10', '10' ]
-console.log(solution('00110011')); // [ '0011', '01', '0011', '01', '1100', '10' ]
-console.log(solution('0001001100')); // [ '01', '0011', '01', '10', '1100', '10' ]
-console.log(solution('0001110')); // [ '000111', '0011', '01', '10' ]
-console.log(solution('000111000111')); //[ '000111', '0011', '01', '000111', '0011', '01', '111000', '1100', '10' ]

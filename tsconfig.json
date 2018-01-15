@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",
+    "outDir": "build/",
     "target": "es6",
     "module": "commonjs",
     "strict": true,
@@ -9,5 +11,9 @@
   },
   "include": [
     "**/*.ts"
+  ],
+  "exclude": [
+    "**/*.fixture.ts",
+    "**/*.spec.ts"
   ]
 }

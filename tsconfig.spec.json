@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "test/",
+    "baseUrl": "./src",
+    "noImplicitAny": true,
+    "strictNullChecks": false,
+    "types": [ "jasmine", "node" ],
+    "paths": {
+      "jasmine": ["./node_modules/jasmine-core"]
+    }
+  },
+  "include": [
+    "**/*.d.ts",
+    "**/*.fixture.ts",
+    "**/*.spec.ts"
+  ],
+  "exclude": []
+}
