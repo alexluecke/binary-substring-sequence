@@ -2,7 +2,7 @@ function solution(input: string): string[] {
   const array = input.split('');
 
   // Read back to front with `pop` -> reverse array
-  const result1 = buildResultOutput(zerosThenOnes([ ...array.reverse() ]), '0', '1');
+  const result1 = buildResultOutput(zerosThenOnes([ ...array ]), '0', '1');
   const result2 = buildResultOutput(onesThenZeros([ ...array ]), '1', '0');
 
   return [ ...result1, ...result2 ];
@@ -25,28 +25,24 @@ function scannerFactory(start: string, end: string): (input: string[]) => number
     // Result:
     // A number array containing the number of sequential characters.
     // e.g. if '0' is the starting character, '0011' will return [ 2 ], '0101' will return [ 1, 1 ].
-    let result = [];
-    let char = array.pop();
     let m = 0, n = 0;
 
-    while (char) {
+    return array.reduce((result, char, i, A) => {
       switch (char) {
         case start:
-          m++;
-          char = array.pop();
-          break;
+          m++; break;
         case end:
-          while (char && char === end && ++n) char = array.pop();
+          while (i < A.length && A[i] === end && ++n) i++;
 
           // min equal to 0 implies start character was not previously found
           if (Math.min(m, n)) result.push(Math.min(m, n));
 
           //reset
-          m = 0, n = 0;
-          break;
+          m = 0, n = 0; break;
       }
-    }
-    return result;
+
+      return result;
+    }, [] as number[]);
   }
 }
 
