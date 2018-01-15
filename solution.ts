@@ -19,8 +19,8 @@ function onesThenZeros(array: string[]): number[] {
 function scannerFactory(start: string, end: string): (input: string[]) => number[] {
   return (array: string[]) => {
     // Procedure:
-    // 1. Count sequence of "start" character and count sequence
-    // 2. Count sequence of "end" character
+    // 1. Find "start" character and count sequence
+    // 2. Find "end" character and count sequence
     // 3. Take the min between the two numbers and ensure "start" was previously found
     // Result:
     // A number array containing the number of sequence characters for the two characters,
@@ -39,7 +39,7 @@ function scannerFactory(start: string, end: string): (input: string[]) => number
         case end:
           while (char && char === end && ++n) char = array.pop();
 
-          // only push non-empty results
+          // min equal to 0 implies start character was not previously found
           if (Math.min(m, n)) result.push(Math.min(m, n));
 
           //reset
