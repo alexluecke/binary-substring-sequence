@@ -33,7 +33,7 @@ function scannerFactory(start: string, end: string): (input: string[]) => number
     while (char) {
       switch (char) {
         case start:
-          m = m + 1;
+          m++;
           char = array.pop();
           break;
         case end:
