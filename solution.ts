@@ -27,7 +27,6 @@ function scannerFactory(start: string, end: string): (input: string[]) => number
     // e.g. if '0' is the starting character, '0011' will return [ 2 ], '0101' will return [ 1, 1 ].
     // Do this for each starting sequence.
     let result = [];
-    let found = false;
     let char = array.pop();
     let m = 0, n = 0;
 
@@ -44,7 +43,7 @@ function scannerFactory(start: string, end: string): (input: string[]) => number
           if (Math.min(m, n)) result.push(Math.min(m, n));
 
           //reset
-          m = 0, n = 0, found = false;
+          m = 0, n = 0;
           break;
       }
     }
